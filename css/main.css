@@ -1,3 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans&display=swap");
+@font-face {
+  font-family: 'AkzidenzGroteskBQ';
+  src: url("../fonts/AkzidenzGroteskBQ-BdCnd/AkzidenzGroteskBQ-BdCnd.eot");
+  src: url("../fonts/AkzidenzGroteskBQ-BdCnd/AkzidenzGroteskBQ-BdCnd.eot?#iefix") format("embedded-opentype"), url("../fonts/AkzidenzGroteskBQ-BdCnd/AkzidenzGroteskBQ-BdCnd.woff2") format("woff2"), url("../fonts/AkzidenzGroteskBQ-BdCnd/AkzidenzGroteskBQ-BdCnd.woff") format("woff"), url("../fonts/AkzidenzGroteskBQ-BdCnd/AkzidenzGroteskBQ-BdCnd.ttf") format("truetype"), url("../fonts/AkzidenzGroteskBQ-BdCnd/AkzidenzGroteskBQ-BdCnd.svg#AkzidenzGroteskBQ-BdCnd") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Bebas';
+  src: url("../fonts/Bebas-Regular/Bebas-Regular.eot");
+  src: url("../fonts/Bebas-Regular/Bebas-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Bebas-Regular/Bebas-Regular.woff2") format("woff2"), url("../fonts/Bebas-Regular/Bebas-Regular.woff") format("woff"), url("../fonts/Bebas-Regular/Bebas-Regular.ttf") format("truetype"), url("../fonts/Bebas-Regular/Bebas-Regular.svg#Bebas-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
 * {
   padding: 0px;
   margin: 0px;
@@ -30,20 +47,20 @@ body {
   font-size: 100%;
   line-height: 1;
   font-size: 14px;
-  font-family: "";
+  font-family: "PT Sans", sans-serif;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
   body.lock {
     overflow: hidden; }
-    @media (max-width: 767.98px) {
+    @media (max-width: 479.98px) {
       body.lock {
         width: 100%;
         position: fixed;
         overflow: hidden; } }
 
 input, button, textarea {
-  font-family: ""; }
+  font-family: "PT Sans", sans-serif; }
 
 input::-ms-clear {
   display: none; }
@@ -77,16 +94,151 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden; }
 
 .container {
-  max-width: 1170px;
+  max-width: 880px;
   margin: 0 auto;
   width: 100%; }
-  @media (max-width: 1182px) {
+  @media (max-width: 892px) {
     .container {
       max-width: 970px; } }
-  @media (max-width: 992.98px) {
+  @media (max-width: 767.98px) {
     .container {
       max-width: 750px; } }
-  @media (max-width: 767.98px) {
+  @media (max-width: 479.98px) {
     .container {
       max-width: none;
       padding: 0 10px; } }
+
+.header {
+  padding: 34px 0px 34px 0px; }
+
+.header-top {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 0;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.header-lang {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 0; }
+
+.header-lang__item {
+  margin-right: 10px; }
+
+.header-lang__link {
+  color: #000000;
+  font-family: "Bebas", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 2px 4px;
+  text-align: center; }
+  .header-lang__link.active {
+    color: #fff;
+    background-color: #000; }
+
+.header-order {
+  color: #000000;
+  font-family: "AkzidenzGroteskBQ", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  text-transform: uppercase;
+  text-decoration: underline; }
+  .header-order:hover {
+    text-decoration: none; }
+
+.header-bottom {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 0;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: -34px; }
+  .header-bottom__column {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 31%;
+    flex: 0 0 31%; }
+
+.header-menu__list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 0;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.header-menu__link {
+  color: #000000;
+  font-family: "AkzidenzGroteskBQ", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; }
+  .header-menu__link:hover {
+    color: #404040; }
+
+.header-logo {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 0;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.header-logo__subtitle {
+  color: #000000;
+  font-family: "Bebas", sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 25px;
+  text-transform: uppercase;
+  letter-spacing: 8px; }
+  .header-logo__subtitle span {
+    letter-spacing: 2.72px; }
+  .header-logo__subtitle:first-child {
+    margin-bottom: 10px; }
+  .header-logo__subtitle:last-child {
+    margin-top: 14px; }
+
+.header-logo__image {
+  max-width: 212px; }

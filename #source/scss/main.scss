@@ -14,23 +14,46 @@
 //<ШРИФТЫ>===============================================================================================
 
 //<Подключаем шрифты>=======================================================================================
-
+@font-face {
+	font-family: 'AkzidenzGroteskBQ';
+	src: url('../fonts/AkzidenzGroteskBQ-BdCnd/AkzidenzGroteskBQ-BdCnd.eot');
+	src: url('../fonts/AkzidenzGroteskBQ-BdCnd/AkzidenzGroteskBQ-BdCnd.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/AkzidenzGroteskBQ-BdCnd/AkzidenzGroteskBQ-BdCnd.woff2') format('woff2'),
+	url('../fonts/AkzidenzGroteskBQ-BdCnd/AkzidenzGroteskBQ-BdCnd.woff') format('woff'),
+	url('../fonts/AkzidenzGroteskBQ-BdCnd/AkzidenzGroteskBQ-BdCnd.ttf') format('truetype'),
+	url('../fonts/AkzidenzGroteskBQ-BdCnd/AkzidenzGroteskBQ-BdCnd.svg#AkzidenzGroteskBQ-BdCnd') format('svg');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Bebas';
+	src: url('../fonts/Bebas-Regular/Bebas-Regular.eot');
+	src: url('../fonts/Bebas-Regular/Bebas-Regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Bebas-Regular/Bebas-Regular.woff2') format('woff2'),
+	url('../fonts/Bebas-Regular/Bebas-Regular.woff') format('woff'),
+	url('../fonts/Bebas-Regular/Bebas-Regular.ttf') format('truetype'),
+	url('../fonts/Bebas-Regular/Bebas-Regular.svg#Bebas-Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
 //</Подключаем шрифты>=======================================================================================
 
 
 //<Шрифт по умолчанию>==========================================================================================
-$fontfamily:"";
+$fontfamily: 'PT Sans', sans-serif;
 //</Шрифт по умолчанию>==========================================================================================
 
 //</ШРИФТЫ>=======================================================================================================
 
 //<ПЕРЕМЕННЫЕ>===========================================================================================================
 $minwidth:320px;
-$mw:1170;
+$mw:880;
 $md1:$mw+12;
-$md2:992.98;
-$md3:767.98;
-$md4:479.98;
+$md2:767.98;
+$md3:479.98;
 //</ПЕРЕМЕННЫЕ>===========================================================================================================
 
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
@@ -77,6 +100,98 @@ h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
 
 //<ОСНОВНОЙ БЛОК>===========================================================================================================
 
+.header {
+	padding: 34px 0px 34px 0px;
+}
+.header-top {
+	@include flexbox();
+	justify-content: space-between;
+	align-items: center;
+}
+.header-lang {
+	@include flexbox();
+}
+.header-lang__item{
+	margin-right: 10px;
+}
+.header-lang__link {
+	color: #000000;
+	font-family: "Bebas", sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 25px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 2px 4px;
+	text-align: center;
+	&.active{
+		color: #fff;
+		background-color: #000;
+	}
+}
 
+.header-order {
+	color: #000000;
+	font-family: "AkzidenzGroteskBQ", sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 25px;
+	text-transform: uppercase;
+	text-decoration: underline;
+	&:hover{text-decoration: none;}
+}
+.header-bottom {
+	@include flexbox();
+	justify-content: space-between;
+	align-items: center;
+	margin-top: -34px;
+	&__column{
+		flex: 0 0 31%;
+	}
+}
+.header-menu__list {
+	@include flexbox();
+	justify-content: space-between;
+}
+.header-menu__link {
+	color: #000000;
+	font-family: "AkzidenzGroteskBQ", sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 25px;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	@include anim(0.3s,0s);
+	&:hover{
+		color: #404040;
+	}
+}
+.header-logo {
+	@include flexbox();
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+}
+.header-logo__subtitle {
+	color: #000000;
+	font-family: "Bebas", sans-serif;
+	font-size: 8px;
+	font-weight: 400;
+	line-height: 25px;
+	text-transform: uppercase;
+	letter-spacing: 8px;
+	span{
+		letter-spacing: 2.72px;
+	}
+	&:first-child{
+		margin-bottom: 10px;
+	}
+	&:last-child{
+		margin-top: 14px;
+	}
+}
+.header-logo__image {
+	max-width: 212px;
+}
 
 //</ОСНОВНОЙ БЛОК>===========================================================================================================
