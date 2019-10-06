@@ -52,8 +52,8 @@ $fontfamily: 'PT Sans', sans-serif;
 $minwidth:320px;
 $mw:880;
 $md1:$mw+12;
-$md2:767.98;
-$md3:479.98;
+$md2:680.98;
+$md3:550.98;
 //</ПЕРЕМЕННЫЕ>===========================================================================================================
 
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
@@ -81,6 +81,12 @@ a:hover{text-decoration: none;}
 ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
+.ibg{
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	img{display: none;}
+}
 //</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
 
 //<ОБОЛОЧКА>===========================================================================================================
@@ -88,6 +94,10 @@ h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
 	&.loaded{}
 }
 //</ОБОЛОЧКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЯ>=========================================================================================================
+@import "header";
+//</ПОДКЛЮЧЕНИЯ>=========================================================================================================
 
 //<ОСНОВНАЯ СЕТКА>===========================================================================================================
 .container{max-width:$mw+px;margin: 0 auto;width: 100%;
@@ -100,98 +110,375 @@ h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
 
 //<ОСНОВНОЙ БЛОК>===========================================================================================================
 
-.header {
-	padding: 34px 0px 34px 0px;
-}
-.header-top {
-	@include flexbox();
-	justify-content: space-between;
-	align-items: center;
-}
-.header-lang {
+.catering__body {
 	@include flexbox();
 }
-.header-lang__item{
-	margin-right: 10px;
+.catering__column {
+	background-color: #000;
+	flex: 0 0 50%;
+	&:last-child{
+		padding: 75px 62px;
+		@media (max-width:$md1+px){
+			padding: 60px 40px;
+		}
+		@media (max-width:$md2+px){
+			flex: 1 1 100%;
+		}
+	}
+	&:first-child{
+		@media (max-width:$md2+px){
+			display: none;
+		}
+	}
 }
-.header-lang__link {
-	color: #000000;
-	font-family: "Bebas", sans-serif;
-	font-size: 14px;
+.catering__title {
+	color: #ffffff;
+	font-family: "AkzidenzGroteskBQ";
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	line-height: 50px;
+	font-weight: 400;
+	font-size: 50px;
+}
+.catering__text {
+	color: #ffffff;
+	font-family: "PT Sans", sans-serif;
+	font-size: 15px;
 	font-weight: 400;
 	line-height: 25px;
+	max-width: 310px;
+	margin: 37px 0px 55px;
+	@media (max-width:$md1+px){
+		max-width: none;
+	}
+}
+.catering__btns {
+	.btn-link{
+		margin-left: 15px;
+	}
+}
+.catering__image{
+	height: 100%;
+}
+
+// <PRODUCTS> =====================
+
+.products {
+	padding: 75px 10px;
+	@media (max-width:$md3+px){
+		padding: 50px 0;
+	}
+}
+.products-body {
+	@include flexbox();
+	flex-wrap: wrap;
+}
+.products-item {
+	flex: 0 0 25%;
+	@include flexbox();
+	flex-direction: column;
+	justify-content: space-between;
+	@media (max-width:$md2+px){
+		flex: 0 0 50%;
+		margin-bottom: 30px;
+	}
+	@media (max-width:430px){
+		flex: 1 1 100%;
+		margin-bottom: 50px;
+	}
+}
+.products-item__image {
+	padding: 0px 0px 100% 0px;
+}
+.products-item__title {
+	color: #000000;
+	font-family: "AkzidenzGroteskBQ", sans-serif;
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 25px;
 	text-transform: uppercase;
-	letter-spacing: 1px;
-	padding: 2px 4px;
-	text-align: center;
-	&.active{
-		color: #fff;
-		background-color: #000;
+	letter-spacing: 2.5px;
+	margin: 25px 0px 35px 0px;
+	padding: 0px 35px 0px 0px;
+	a{
+		color: #000;
+		@include anim(0.3s,0s);
+		&:hover{
+			color: #222;
+		}
+	}
+	@media (max-width:$md3+px){
+		margin: 20px 0px 20px 0px;
+	}
+
+}
+.products-item__text {
+	padding: 0px 35px 0px 0px;
+	margin: 0px 0px 10px 0px;
+	color: #000000;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 25px;
+	min-height: 100px;
+	@media (max-width:$md1+px){
+		margin: 0px 0px 32px 0px;
+		padding: 0px 5px 0px 0px;
+	}
+	@media (max-width:$md2+px){
+		min-height: auto;
+	}
+	@media (max-width:$md3+px){
+		margin: 0px 0px 20px 0px;
+	}
+}
+.products-btns {
+	@include flexbox();
+	flex-direction: column;
+	align-items: flex-start;
+	.btn {
+		margin: 0px 0px 20px 0px;
+		@media (max-width:$md3+px){
+			margin: 0px 0px 10px 0px;
+		}
 	}
 }
 
-.header-order {
-	color: #000000;
-	font-family: "AkzidenzGroteskBQ", sans-serif;
-	font-size: 15px;
-	font-weight: 400;
-	line-height: 25px;
-	text-transform: uppercase;
-	text-decoration: underline;
-	&:hover{text-decoration: none;}
-}
-.header-bottom {
+// <WHYUS> =====================
+.whyus {}
+.whyus-top {
+	background-color: #000;
 	@include flexbox();
-	justify-content: space-between;
-	align-items: center;
-	margin-top: -34px;
-	&__column{
-		flex: 0 0 31%;
-	}
 }
-.header-menu__list {
-	@include flexbox();
-	justify-content: space-between;
-}
-.header-menu__link {
-	color: #000000;
-	font-family: "AkzidenzGroteskBQ", sans-serif;
-	font-size: 15px;
-	font-weight: 400;
-	line-height: 25px;
-	text-transform: uppercase;
-	letter-spacing: 1.5px;
-	@include anim(0.3s,0s);
-	&:hover{
-		color: #404040;
-	}
-}
-.header-logo {
-	@include flexbox();
-	justify-content: space-between;
-	flex-direction: column;
-	align-items: center;
-}
-.header-logo__subtitle {
-	color: #000000;
-	font-family: "Bebas", sans-serif;
-	font-size: 8px;
-	font-weight: 400;
-	line-height: 25px;
-	text-transform: uppercase;
-	letter-spacing: 8px;
-	span{
-		letter-spacing: 2.72px;
-	}
+.whyus-top__column {
+	flex: 0 0 50%;
 	&:first-child{
-		margin-bottom: 10px;
+		padding: 57px 61px;
+		text-align: right;
+		@media (max-width:$md1+px){
+			padding: 50px 20px 50px 20px;
+		}
+		@media (max-width:$md2+px){
+			flex: 1 1 100%;
+			text-align: center;
+			padding: 40px 0px;
+		}
 	}
-	&:last-child{
-		margin-top: 14px;
+	@media (max-width:$md2+px){
+		&:last-child{
+			display: none;
+		}
 	}
 }
-.header-logo__image {
-	max-width: 212px;
+.whyus-top__title {
+	color: #ffffff;
+	font-family: "AkzidenzGroteskBQ", sans-serif;
+	font-size: 50px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	line-height: 37px;
+	@media (max-width:1024px){
+		font-size: 42px;
+	}
+	@media (max-width:($md1 + 10) +px){
+		font-size: 36px;
+	}
+}
+.whyus-top__image {
+	height: 100%;
+}
+
+.whyus-wrap{
+	background-color: #ebebeb;
+}
+.whyus-body {
+	@include flexbox();
+	padding: 50px 10px 0px 10px;
+	flex-wrap: wrap;
+	@media (max-width:$md3+px){
+		padding: 50px 0px 0px 0px;
+	}
+}
+.whyus-item {
+	@include flexbox();
+	flex: 0 0 50%;
+	margin: 0px 0px 50px 0px;
+	align-items: flex-start;
+	padding: 0px 10px 0px 0px;
+	@media (max-width:$md3+px){
+		flex: 1 1 100%;
+		padding: 0px 0px 0px 0px;
+	}
+}
+.whyus-item__icon {
+	padding: 20px;
+	background-color: #000;
+	margin: 0px 10px 0px 0px;
+	img{
+		width: 60px;
+		height: 60px;
+	}
+}
+.whyus-item__info {
+	@include flexbox();
+	flex-direction: column;
+	justify-content: space-between;
+}
+.whyus-item__title {
+	color: #000000;
+	font-family: "AkzidenzGroteskBQ", sans-serif;
+	font-size: 25px;
+	font-weight: 400;
+	line-height: 25px;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	@media (max-width:$md1+px){
+		font-size: 20px;
+	}
+}
+.whyus-item__text {
+	color: #000000;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 25px;
+	@media (max-width:$md1+px){
+		font-size: 13px;
+		line-height: 20px;
+	}
+}
+
+// <SAYHELLO> =====================
+#map{
+	height: 475px;
+}
+
+.sayhello {
+	padding: 80px 0px 0px 0px;
+	@media (max-width:$md2+px){
+		padding: 50px 0px 0px 0px;
+	}
+}
+.sayhello-top{
+	padding: 0 10px;
+	@media (max-width:$md3+px){
+		padding: 0px 0px 0px 0px;
+	}
+}
+.sayhello-top__title {
+	color: #000000;
+	font-family: "AkzidenzGroteskBQ", sans-serif;
+	font-size: 50px;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+}
+.sayhello-contacts {
+	@include flexbox();
+	flex-wrap: wrap;
+	margin: 30px 0px 0px 0px;
+}
+.sayhello-contacts__item {
+	color: #000000;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 27px;
+	flex: 0 0 50%;
+	margin-bottom: 30px;
+	a{
+		color: #000000;
+		text-decoration: none;
+		&:hover{
+			color: #252525;
+		}
+	}
+	@media (max-width:$md2+px){
+		flex: 1 1 100%;
+	}
+}
+.icon-contact {
+	padding-left: 33px;
+}
+.icon-contact--map {
+	background:transparent url('../img/sayhello/icons/01.svg') left center no-repeat;
+	background-size: 20px 26px;
+}
+.icon-contact--mail {
+	background:transparent url('../img/sayhello/icons/02.svg') left center no-repeat;
+	background-size: 27px 19px;
+}
+.icon-contact--phone {
+	background:transparent url('../img/sayhello/icons/03.svg') left center no-repeat;
+	background-size: 19px 25px;
+}
+.social {
+	@include flexbox();
+}
+.social__item {
+	margin-right: 20px;
+}
+.sayhello-body {
+	@include flexbox();
+	flex-wrap: wrap;
+	background-color: #000;
+}
+.sayhello__column {
+	flex: 0 0 50%;
+	&:last-child{
+		padding: 50px 60px 50px 60px;
+		@media (max-width:$md1+px){
+			padding: 40px;
+		}
+		@media (max-width:380px){
+			padding: 40px 25px;
+		}
+	}
+	@media (max-width:$md2+px){
+		flex: 1 1 100%;
+		&:last-child{
+			order: 1;
+		}
+		&:first-child{
+			order: 2;
+		}
+	}
+}
+.sayhello-form__title {
+	color: #ffffff;
+	font-family: "AkzidenzGroteskBQ", sans-serif;
+	font-size: 25px;
+	font-weight: 400;
+	line-height: 35px;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	margin-bottom: 20px;
+}
+
+.sayhello-form {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 375px;
+}
+.sayhello-form__input {
+	flex: 1 1 100%;
+	margin-bottom: 25px;
+}
+.sayhello-form__textarea {
+	flex: 1 1 100%;
+	margin-bottom: 25px;
+}
+
+#map{
+	width: 100%;
+	height: 100%;
+	min-height: 475px;
+	@media (max-width:$md2+px){
+		min-height: 200px;
+	}
 }
 
 //</ОСНОВНОЙ БЛОК>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЯ>=========================================================================================================
+@import "forms";
+@import "footer";
+//</ПОДКЛЮЧЕНИЯ>=========================================================================================================
