@@ -210,11 +210,11 @@
 				</div>
 				<div class="sayhello__column">
 					<h3 class="sayhello-form__title">Get in touch</h3>
-					<form action="" class="sayhello-form">
-						<input autocomplete="off" type="text" name="form[]" data-value="Name" class="sayhello-form__input input" />
-						<input autocomplete="off" type="text" name="form[]" data-value="E-mail or phone number" class="sayhello-form__input input" />
-						<textarea name="form[]" data-value="Your text" class="textarea sayhello-form__textarea"></textarea>
-						<button type="submit" class="sayhello-form__btn btn btn--w">Send message</button>
+					<form action="" class="sayhello-form" data-ms="message">
+						<input autocomplete="off" type="text" name="form[]" data-value="Name" class="sayhello-form__input input req" />
+						<input autocomplete="off" type="text" name="form[]" data-value="E-mail or phone number" class="sayhello-form__input input req" />
+						<textarea name="form[]" data-value="Your text" class="textarea sayhello-form__textarea req"></textarea>
+						<button type="button" class="sayhello-form__btn btn btn--w">Send message</button>
 					</form>
 				</div>
 			</div>
@@ -229,12 +229,20 @@
 	</div>
 </footer>
 	</div>
-	<!--
-<div class="popup">
-	<div class="popup-name">
+	<div class="popup popup-message">
+	<div class="popup-table table">
+		<div class="cell">
+			<div class="popup-content">
+				<div class="popup-close"></div>
+				<div class="popup__image">
+					<img src="img/icons/check.png" alt="Check" />
+				</div>
+				<div class="popup__title">Thank You!</div>
+				<div class="popup__txt">Thank you for your application! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, facere.</div>
+			</div>
+		</div>
 	</div>
 </div>
--->
 	<script src="https://maps.google.com/maps/api/js?sensor=false&amp;key="></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="js/main.js"></script>

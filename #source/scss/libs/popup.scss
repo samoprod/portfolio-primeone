@@ -18,24 +18,26 @@
 	}
 }
 .popup-table{height: 100%;table-layout: fixed;
-	>.cell{height: 100%;vertical-align: middle;padding: 30px 10px;}
+	>.cell{height: 100%;vertical-align: middle;padding: 50px 10px;}
 }
 .popup-content {
 	@include scale(0);
 	@include anim(0.3s, 0s);
 	position: relative;
-	max-width: 1230px;
+	max-width: 300px;
 	margin: 0px auto;
 	background-color: #fff;
 }
 .popup-close {
 	width: 15px;
 	height: 15px;
+	overflow: hidden;
 	position: absolute;
-	top: 0px;
-	right: 0px;
+	top: 5px;
+	right: 5px;
 	cursor: pointer;
-	background: url('../img/icons/close.png') 0 0 no-repeat;
+	background: url('../img/icons/close.svg') center center no-repeat;
+	background-size: cover;
 }
 .popup-video{
 	.popup-close{width: 40px;height: 40px;background-color: #000;top: 0;right: 0;}

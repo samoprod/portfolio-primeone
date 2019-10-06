@@ -423,7 +423,7 @@ function digi(str){
 }
 
 //VALIDATE FORMS
-$('form button[type=submit]').click(function(){
+$('form button[type=button]').click(function(){
 		var er=0;
 		var form=$(this).parents('form');
 		var ms=form.data('ms');
@@ -471,6 +471,9 @@ $('form button[type=submit]').click(function(){
 
 		if(ms!=null && ms!=''){
 			showMessageByClass(ms);
+			setTimeout(function(){
+				form.trigger('reset');
+			}, 1000);
 			return false;
 		}
 	}else{
@@ -530,7 +533,7 @@ function formLoad(){
 }
 function showMessageByClass(ms){
 	$('.popup').hide();
-	popupOpen('message.'+ms,'');
+	popupOpen(ms,'');
 }
 function showMessage(html){
 	$('.popup-loading').remove();
