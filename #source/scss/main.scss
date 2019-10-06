@@ -117,7 +117,7 @@ h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
 	background-color: #000;
 	flex: 0 0 50%;
 	&:last-child{
-		padding: 75px 62px;
+		padding: 75px 60px;
 		@media (max-width:$md1+px){
 			padding: 60px 40px;
 		}
@@ -147,14 +147,21 @@ h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
 	font-weight: 400;
 	line-height: 25px;
 	max-width: 310px;
-	margin: 37px 0px 55px;
+	margin: 25px 0px 50px;
 	@media (max-width:$md1+px){
 		max-width: none;
 	}
 }
 .catering__btns {
+	@media (max-width:$md3+px){
+		@include flexbox();
+		flex-direction: column;
+	}
 	.btn-link{
 		margin-left: 15px;
+		@media (max-width:$md3+px){
+			margin: 15px 0px 0px 0px;
+		}
 	}
 }
 .catering__image{
@@ -198,8 +205,8 @@ h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
 	line-height: 25px;
 	text-transform: uppercase;
 	letter-spacing: 2.5px;
-	margin: 25px 0px 35px 0px;
-	padding: 0px 35px 0px 0px;
+	margin: 27px 0px 27px 0px;
+	padding: 0px 35px 0px 5px;
 	a{
 		color: #000;
 		@include anim(0.3s,0s);
@@ -209,12 +216,13 @@ h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
 	}
 	@media (max-width:$md3+px){
 		margin: 20px 0px 20px 0px;
+		padding: 0px 35px 0px 0px;
 	}
 
 }
 .products-item__text {
-	padding: 0px 35px 0px 0px;
-	margin: 0px 0px 10px 0px;
+	padding: 0px 30px 0px 5px;
+	margin: 0px 0px 0px 0px;
 	color: #000000;
 	font-size: 15px;
 	font-weight: 400;
@@ -235,16 +243,20 @@ h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
 	@include flexbox();
 	flex-direction: column;
 	align-items: flex-start;
+	padding: 0px 0px 0px 5px;
 	.btn {
-		margin: 0px 0px 20px 0px;
+		margin: 0px 0px 25px 0px;
+		padding: 13px 30px;
 		@media (max-width:$md3+px){
 			margin: 0px 0px 10px 0px;
 		}
 	}
+	@media (max-width:$md3+px){
+		padding: 0px 0px 0px 0px;
+	}
 }
 
 // <WHYUS> =====================
-.whyus {}
 .whyus-top {
 	background-color: #000;
 	@include flexbox();
@@ -277,6 +289,7 @@ h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	line-height: 37px;
+	margin-right: -5px;
 	@media (max-width:1024px){
 		font-size: 42px;
 	}
@@ -290,10 +303,11 @@ h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
 
 .whyus-wrap{
 	background-color: #ebebeb;
+	padding: 0 10px;
 }
 .whyus-body {
 	@include flexbox();
-	padding: 50px 10px 0px 10px;
+	padding: 50px 0px 0px 0px;
 	flex-wrap: wrap;
 	@media (max-width:$md3+px){
 		padding: 50px 0px 0px 0px;
@@ -311,18 +325,19 @@ h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
 	}
 }
 .whyus-item__icon {
-	padding: 20px;
+	padding: 18px 20px;
 	background-color: #000;
 	margin: 0px 10px 0px 0px;
 	img{
-		width: 60px;
-		height: 60px;
+		width: 65px;
+		height: 65px;
 	}
 }
 .whyus-item__info {
 	@include flexbox();
 	flex-direction: column;
 	justify-content: space-between;
+	height: 100%;
 }
 .whyus-item__title {
 	color: #000000;
@@ -353,13 +368,12 @@ h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
 }
 
 .sayhello {
-	padding: 80px 0px 0px 0px;
+	padding: 73px 10px 0px 10px;
 	@media (max-width:$md2+px){
 		padding: 50px 0px 0px 0px;
 	}
 }
 .sayhello-top{
-	padding: 0 10px;
 	@media (max-width:$md3+px){
 		padding: 0px 0px 0px 0px;
 	}
@@ -375,7 +389,7 @@ h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
 .sayhello-contacts {
 	@include flexbox();
 	flex-wrap: wrap;
-	margin: 30px 0px 0px 0px;
+	margin: 22px 0px 0px 0px;
 }
 .sayhello-contacts__item {
 	color: #000000;
@@ -383,7 +397,7 @@ h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
 	font-weight: 400;
 	line-height: 27px;
 	flex: 0 0 50%;
-	margin-bottom: 30px;
+	margin-bottom: 25px;
 	a{
 		color: #000000;
 		text-decoration: none;
@@ -414,17 +428,21 @@ h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
 	@include flexbox();
 }
 .social__item {
-	margin-right: 20px;
+	margin-right: 25px;
 }
 .sayhello-body {
 	@include flexbox();
 	flex-wrap: wrap;
 	background-color: #000;
+	margin: 0 -10px;
+	@media (max-width:$md3+px){
+		margin: 0px 0px 0px 0px;
+	}
 }
 .sayhello__column {
 	flex: 0 0 50%;
 	&:last-child{
-		padding: 50px 60px 50px 60px;
+		padding: 44px 60px 50px 60px;
 		@media (max-width:$md1+px){
 			padding: 40px;
 		}
@@ -460,11 +478,15 @@ h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
 }
 .sayhello-form__input {
 	flex: 1 1 100%;
-	margin-bottom: 25px;
+	margin-bottom: 27px;
 }
 .sayhello-form__textarea {
 	flex: 1 1 100%;
-	margin-bottom: 25px;
+	margin-bottom: 27px;
+	height: 98px;
+}
+.sayhello-form__btn.btn{
+	padding: 13px 21px;
 }
 
 #map{
